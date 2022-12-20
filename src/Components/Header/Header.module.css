@@ -1,0 +1,24 @@
+.container-header {
+  position: absolute;
+  height: 12.5rem;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  background: #0D0D0D;
+}
+
+.rocket-logo {
+  position: absolute;
+  width: 1.38rem;
+  height: 2.25rem;
+  left: calc(50% - 1.37rem/2 - 3.25rem);
+  top: 5.13rem;
+}
+
+.todo-logo {
+  position: absolute;
+  width: 5.75rem;
+  height: 3rem;
+  left: calc(50% - 5.75rem/2 + 1.06rem);
+  top: 4.5rem;
+}
