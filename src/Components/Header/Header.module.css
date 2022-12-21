@@ -1,24 +1,48 @@
-.container-header {
-  position: absolute;
+.header {
+  background: var(--gray-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 12.5rem;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  background: #0D0D0D;
+  position: relative;
 }
 
-.rocket-logo {
+.taskForm {
+  display: flex;
+  height: 3.375rem;
+  width: 100%;
+  max-width: 46rem;
+  bottom: calc(-3.375rem / 2);
+  gap: 0.5rem;
   position: absolute;
-  width: 1.38rem;
-  height: 2.25rem;
-  left: calc(50% - 1.37rem/2 - 3.25rem);
-  top: 5.13rem;
+  padding: 0 1rem;
 }
 
-.todo-logo {
-  position: absolute;
-  width: 5.75rem;
-  height: 3rem;
-  left: calc(50% - 5.75rem/2 + 1.06rem);
-  top: 4.5rem;
+.taskForm input {
+  height: 100%;
+  flex: 1;
+  color: var(--gray-100);
+  background: var(--gray-500);
+  border: 1px solid var(--gray-700);
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+
+.taskForm input::placeholder {
+  color: var(--gray-300);
+}
+
+.taskForm button {
+  display: flex;
+  height: 100%;
+  padding: 0 1rem;
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  border: none;
+  border-radius: 0.5rem;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  gap: 0.375rem;
 }
