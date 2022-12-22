@@ -2,12 +2,15 @@ import { PropsWithChildren } from 'react'
 import Task from '../../Task'
 import styles from './TaskMenu.module.css'
 import { ITasks } from '../../App'
+import { TbClipboardText } from 'react-icons/tb';
 
 interface Props {
   tasksTodo: ITasks[],
+  onDelete: (taskID: string) => void;
+  onChecked: (taskID: string) => void;
 }
 
-export default function TaskMenu({ tasksTodo }: Props) {
+export default function TaskMenu({ tasksTodo, onDelete, onChecked }: Props) {
   const taskQuantity = tasksTodo.length;
   const completedTasks = tasksTodo.filter((task) => task.isChecked).length
 
@@ -30,8 +33,20 @@ export default function TaskMenu({ tasksTodo }: Props) {
           <Task
             key={task.id}
             task={task}
+            onDelete={onDelete}
+            onChecked={onChecked}
           />
         ))}
+
+        {tasksTodo.length <= 0 && (
+          <section className={styles['empty']}>
+            <TbClipboardText size={50} />
+            <div>
+              <p>Você ainda não tem tarefas cadastradas</p>
+              <span>Crie tarefas e organize seus itens a fazer</span>
+            </div>
+          </section>
+        )}
       </div>
     </section>
   )
